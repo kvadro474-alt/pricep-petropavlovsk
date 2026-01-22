@@ -1,0 +1,141 @@
+<<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прицепы Петропавловск | Рублевка</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --main: #1a1a1a; --accent: #e63946; --kaspi: #f14635; --wa: #25D366; --bg: #f2f2f2; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: var(--main); }
+
+        /* ОБНОВЛЕННАЯ ШАПКА: ЕЩЕ КРУПНЕЕ */
+        .top-nav { 
+            background: #000; 
+            color: white; 
+            padding: 12px 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 15px; /* ЕЩЕ БОЛЬШЕ ШРИФТ */
+            white-space: nowrap; 
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+        .top-nav div { display: flex; align-items: center; font-weight: 700; }
+        .top-nav a { color: white; text-decoration: none; }
+        .top-nav i { color: var(--accent); margin-right: 8px; text-shadow: 0 0 8px var(--accent); }
+
+        header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('IMG-20260120-WA0086.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 20px;
+        }
+        header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0; letter-spacing: 1px; text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+        header .sub { font-size: 1.2rem; color: var(--accent); font-weight: bold; margin-top: 5px; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .kaspi-box {
+            background: white; border: 2px solid var(--kaspi); border-radius: 12px;
+            margin: -30px auto 30px; padding: 15px 25px;
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 10;
+        }
+        .k-logo { background: var(--kaspi); color: white; font-weight: 900; padding: 8px 15px; border-radius: 6px; font-size: 20px; }
+        .k-text { font-size: 18px; font-weight: bold; }
+        .k-text span { color: var(--kaspi); }
+
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
+        .feature-item {
+            background: white; padding: 20px 10px; border-radius: 12px; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .feature-item i { font-size: 24px; color: var(--accent); margin-bottom: 10px; display: block; }
+        .feature-item span { font-size: 14px; font-weight: bold; text-transform: uppercase; }
+
+        .selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
+        .choice-card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08); text-decoration: none; color: inherit;
+            transition: 0.3s ease; display: flex; flex-direction: column;
+        }
+        .choice-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
+        .choice-img-box { width: 100%; height: 280px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .choice-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .choice-text { padding: 25px; text-align: center; border-top: 1px solid #f0f0f0; }
+        .choice-text h2 { margin: 0; font-size: 1.5rem; text-transform: uppercase; }
+
+        .wa-float {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white; padding: 12px 20px; border-radius: 50px;
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+            font-weight: bold; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000; animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav { font-size: 13px; padding: 10px 4px; } /* Оптимально для мобилок */
+            .selection-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .kaspi-box { flex-direction: column; text-align: center; }
+            .wa-float span { display: none; }
+            .wa-float { padding: 15px; border-radius: 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <div><i class="fas fa-map-marker-alt"></i> ПЕТРОПАВЛОВСК, РУБЛЕВКА</div>
+        <div><a href="tel:+77773377797"><i class="fas fa-phone-alt"></i> +7 777 337 77 97</a></div>
+    </div>
+
+    <header>
+        <h1>ПРИЦЕПЫ ПЕТРОПАВЛОВСК</h1>
+        <div class="sub">РУБЛЕВКА</div>
+    </header>
+
+    <div class="container">
+        <div class="kaspi-box">
+            <div class="k-logo">Kaspi.kz</div>
+            <div class="k-text">РАССРОЧКА <span>0-0-12</span> И KASPI RED</div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item"><i class="fas fa-check-double"></i><span>В наличии</span></div>
+            <div class="feature-item"><i class="fas fa-file-invoice"></i><span>Документы</span></div>
+            <div class="feature-item"><i class="fas fa-tools"></i><span>Сервис</span></div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Качество</span></div>
+        </div>
+
+        <div class="selection-grid">
+            <a href="odnosniy.html" class="choice-card">
+                <div class="choice-img-box"><img src="IMG-20260120-WA0085.jpg"></div>
+                <div class="choice-text"><h2>ОДНООСНЫЕ</h2><p>Категория "B"</p></div>
+            </a>
+            <a href="dvuhosnye.html" class="choice-card">
+                <div class="choice-img-box"><img src="оло.jpg"></div>
+                <div class="choice-text"><h2>ДВУХОСНЫЕ</h2><p>Усиленные модели</p></div>
+            </a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/77773377797" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i><span>Написать в WhatsApp</span>
+    </a>
+
+    <footer style="background: #000; color: #555; padding: 30px; text-align: center; font-size: 14px;">
+        <p>© 2026 Продажа прицепов. Петропавловск.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Одноосные прицепы — Каталог</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --main: #1a1a1a; --accent: #e63946; --wa: #25D366; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; margin: 0; }
+        
+        header { background: var(--main); color: #fff; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--accent); position: relative; }
+        
+        /* Кнопка назад */
+        .back-link { 
+            position: absolute; top: 20px; left: 20px; color: #fff; 
+            text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 50px; transition: 0.3s;
+        }
+        .back-link:hover { background: var(--accent); }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 25px; }
+        .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .img-box { position: relative; width: 100%; height: 260px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; }
+        .img-box img { max-width: 95%; max-height: 95%; object-fit: contain; }
+        .content { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
+        .content h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: #000; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .specs { list-style: none; padding: 0; margin-bottom: 20px; font-size: 13px; }
+        .specs li { padding: 7px 0; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; }
+        .specs i { color: var(--accent); width: 22px; text-align: center; margin-right: 5px; }
+        .specs b { color: #333; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 8px; gap: 8px; font-size: 14px; transition: 0.3s; }
+        .btn-wa { background: var(--wa); color: white; }
+        .btn-call { background: var(--main); color: white; }
+        .btn:hover { opacity: 0.9; scale: 1.02; }
+
+        @media (max-width: 600px) {
+            .back-link { position: static; display: inline-flex; margin-bottom: 15px; }
+            header { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
+    <h1>ОДНООСНЫЕ ПРИЦЕПЫ</h1>
+    <p>Доступны для управления с правами категории "B"</p>
+</header>
+
+<div class="container">
+    <div class="grid" id="catalog"></div>
+</div>
+
+<script>
+    const myPhone = "+77773377797"; // ЗАМЕНИ НА СВОЙ НОМЕР
+    const photos = [
+        'IMG-20260120-WA0080.jpg', 'IMG-20260120-WA0083.jpg', 'IMG-20260120-WA0084.jpg', 
+        'IMG-20260120-WA0085.jpg', 'IMG-20260120-WA0087.jpg', 'IMG-20260120-WA0088.jpg',
+        'IMG-20260120-WA0089.jpg', 'IMG-20260120-WA0094.jpg', 'IMG-20260120-WA0095.jpg'
+    ];
+
+    const grid = document.getElementById('catalog');
+    photos.forEach((img, idx) => {
+        grid.innerHTML += `
+            <div class="card">
+                <div class="img-box"><img src="${img}"></div>
+                <div class="content">
+                    <h3>Одноосный прицеп (Серия Бизнес)</h3>
+                    <ul class="specs">
+                        <li><span><i class="fas fa-arrows-alt-h"></i> Длина кузова:</span> <b>2500 мм</b></li>
+                        <li><span><i class="fas fa-arrows-alt-v"></i> Ширина кузова:</span> <b>1300 мм</b></li>
+                        <li><span><i class="fas fa-up-down"></i> Высота борта:</span> <b>350 мм</b></li>
+                        <li><span><i class="fas fa-weight-hanging"></i> Собственный вес:</span> <b>185 кг</b></li>
+                        <li><span><i class="fas fa-box"></i> Грузоподъемность:</span> <b>565 кг</b></li>
+                        <li><span><i class="fas fa-stop-circle"></i> Тормозная система:</span> <b>Отсутствует</b></li>
+                    </ul>
+                    <a href="https://wa.me/${myPhone}" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Обсудить в WhatsApp</a>
+                    <a href="tel:+${myPhone}" class="btn btn-call"><i class="fas fa-phone-alt"></i> Позвонить специалисту</a>
+                </div>
+            </div>`;
+    });
+</script>
+</body>
+</html>
